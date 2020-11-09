@@ -66,7 +66,7 @@ def calculate_fair_dividing_n_by_m():
             equations.append(log(input_matrix[index][cols_index]*cvx_variable_arr[index] + sum_all_but_index(input_matrix[index],cols_index)))
             index += 1
     
-        # adding the last constraicts
+        # adding the last constraint (x + y + z <= 1)
         constraints.append(cvx.sum(cvx_variable_arr) <= 1)
 
         # building the problem and solving it
